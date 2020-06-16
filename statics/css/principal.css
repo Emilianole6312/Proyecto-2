@@ -27,38 +27,17 @@ body {
     padding-left: 10%;
     padding-top: 2%;
 }
-
-.uno {
-    background-color: #C4619F;
-    border-radius: 25%;
-    margin-top: 15%;
-    margin-right: 0.1%;
-    text-align: center;
+.uno,.dos,.tres,.cuatro{
+  border-radius: 30%;
+  padding: 5%;
+  margin-top: 15%;
+  margin-right: 0.1%;
+  text-align: center;
 }
-
-.dos {
-    background-color: #4169E1;
-    border-radius: 20%;
-    margin-top: 15%;
-    margin-right: 0.1%;
-    text-align: center;
-}
-
-.tres {
-    background-color: #02BF71;
-    border-radius: 20%;
-    margin-top: 15%;
-    margin-right: 0.1%;
-    text-align: center;
-}
-
-.cuatro {
-    background-color: #BF02AF;
-    border-radius: 20%;
-    margin-top: 15%;
-    margin-right: 0.1%;
-    text-align: center;
-}
+.uno {background-color: #C4619F;}
+.dos {background-color: #4169E1;}
+.tres {background-color: #02BF71;}
+.cuatro {background-color: #BF02AF;}
 
 .uno:hover {
     background-color: #A83D80;

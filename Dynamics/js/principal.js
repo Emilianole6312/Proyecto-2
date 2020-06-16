@@ -13,9 +13,21 @@ let dos = document.getElementsByClassName("dos");
 let tres = document.getElementsByClassName("tres");
 let cuatro = document.getElementsByClassName("cuatro");
 
+/*Se muestra juego 1*/
+fetch("../Templates/Blackjack.html")
+  .then((response) => {
+    return response.text();
+  })
+  .then((text) => {
+    console.log(text);
+    document.getElementById("gameone").addEventListener("click", () => {
+      document.getElementById("contenedorJuego").innerHTML = text;
+    })
+  })
 
-let text = document.createElement("p");
-text.innerText = "Algo";
+
+/*let text = document.createElement("p");
+text.innerText = "Algo";*/
 
 let otro = document.createElement("p");
 otro.innerText = "Juego 2";
@@ -23,10 +35,10 @@ otro.innerText = "Juego 2";
 let otroDos = document.createElement("p");
 otroDos.innerText = "Juego 3";
 
-gameone.onclick = function() {
-    $(contenedorJuego).empty();
+/*gameone.onclick = function() {
+    $(contenedorJuego).load(text);
     contenedorJuego.appendChild(text);
-};
+};*/
 
 gametwo.onclick = function() {
     $(contenedorJuego).empty();

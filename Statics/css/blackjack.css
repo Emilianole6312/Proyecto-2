@@ -1,22 +1,19 @@
 @import url("fonts.css");
-body {
-    background-color: rgb(0, 147, 79);
-}
 
 #manosCrupier {
-    height: 20vh;
+  height: 20vh;
 }
 
 #jugar {
-    background-color: rgb(224, 26, 0);
+  background-color: rgb(224, 26, 0);
 }
 
 #instrucciones {
-    background-color: rgb(230, 191, 0);
+  background-color: rgb(230, 191, 0);
 }
 
 #best {
-    background-color: rgb(0, 62, 158);
+  background-color: rgb(0, 62, 158);
 }
 
 div.inicio {
@@ -30,8 +27,10 @@ div.inicio img {
 }
 
 button.button {
+  border: none;
   border-radius: 2rem;
   color: white;
+  cursor: pointer;
   font-family: "Candal";
   font-size: 150%;
   margin: 10px auto;
@@ -41,7 +40,7 @@ button.button {
 }
 
 .top, .middle, .bottom {
-  height: 32vh;
+  height: 26vh;
   text-align: center;
 }
 

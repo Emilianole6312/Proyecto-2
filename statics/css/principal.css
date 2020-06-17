@@ -9,20 +9,21 @@ body {
 
 header {
   background-color: rgb(44, 135, 139);
-  font-family: "Sriracha";
-  height: 6vh;
+  font-family: "Candal";
+  height: 8vh;
   margin: 3vh 0;
-  padding: 10px 20px;
+  padding: 1%;
 }
 
 header img {
   height: 6vh;
+  padding: 0% 1% 0% 2%;
   vertical-align: middle;
 }
 
 header h1 {
   color: white;
-  font-size: 4vh;
+  font-size: 5vh;
   margin: 0;
   text-align: left;
 }
@@ -31,25 +32,27 @@ div.content {
   background-color: #4A4B71;
   display: flex;
   flex-direction: row;
-  height: 83vh;
-  padding-top: 5%;
+  height: 80vh;
 }
 
 aside.lateral{
   background-color: #4A4B71;
   display: flex;
   flex-direction: column;
-  padding-left: 1.5%;
-  padding-right: 1.5%;
-  width: 20%;
+  padding: 0% 1.5% 0% 1.5%;
+  width: 15%;
 }
 
 button.uno, button.dos, button.tres, button.cuatro {
-  border-radius: 30%;
-  margin-right: 0.1%;
-  margin-top: 15%;
-  padding: 5%;
+  border: none;
+  border-radius: 10%;
+  cursor: pointer;
+  margin: 15% 0% 0% 20%;
+  outline: none;
+  padding: 8%;
   text-align: center;
+  width: 60%;
+  z-index: 1;
 }
 
 button.uno {
@@ -58,7 +61,7 @@ button.uno {
 
 button.uno:hover {
   background-color: #A83D80;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  /* box-shadow: 6px 6px 10px gray; */
 }
 
 button.dos {
@@ -67,7 +70,7 @@ button.dos {
 
 button.dos:hover {
   background-color: #1D4CD8;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  /* box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); */
 }
 
 button.tres {
@@ -76,7 +79,7 @@ button.tres {
 
 button.tres:hover {
   background-color: #007747;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  /* box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); */
 }
 
 button.cuatro {
@@ -85,7 +88,7 @@ button.cuatro {
 
 button.cuatro:hover {
   background-color: #98008B;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  /* box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); */
 }
 
 button.cuatro:hover p {
@@ -100,6 +103,11 @@ p.oculto:hover {
   font-weight: 800;
 }
 
+button label {
+  cursor: pointer;
+  font-family: "Quicksand";
+}
+
 div.coyo {
   align-items: center;
   bottom: 5%;
@@ -107,7 +115,7 @@ div.coyo {
   flex-direction: row;
   justify-content: space-between;
   position: absolute;
-  width: 20%;
+  width: 15%;
 }
 
 div.coyo img {
@@ -152,13 +160,15 @@ p.case {
 
 div.juego {
   background-color: white;
-  border-top-left-radius: 2rem;
+  border-radius: 2rem;
   width: 80%;
 }
 
 #contenedorJuego div.blackjack {
   background-color: rgb(0, 147, 79);
+  border-radius: 2rem;
   height: 100%;
+  top: 10%;
   width: 100%;
 }
 

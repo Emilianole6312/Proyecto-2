@@ -10,3 +10,7 @@
   font-family: "Syncopate";
   src: url("../Media/fonts/Syncopate/Syncopate-Bold.ttf");
 }
+@font-face {
+  font-family: "Quicksand";
+  src: url("../Media/fonts/Quicksand/Quicksand-Bold.ttf");
+}

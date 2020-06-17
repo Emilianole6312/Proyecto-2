@@ -12,35 +12,39 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <h3>CoyoPlay</h3>
-    </nav>
+    <header>
+        <h1><img src="../Statics/Media/img/arcade-removebg-preview (2).png"> Tony Case</h1>
+    </header>
 
     <div class="content">
-        <div class="lateral">
-            <button class="uno" id="gameone"><i class="fas fa-grip-lines fa-2x"></i> Juego 1</button>
-            <button class="dos" id="gametwo"><i class="fas fa-grip-lines fa-2x"></i>Juego 2</button>
-            <button class="tres" id="gamethree"><i class="fas fa-grip-lines fa-2x"></i>Juego 3</button>
+        <aside class="lateral">
+            <button class="uno" id="gameone"> BLACKJACK 21</button>
+            <button class="dos" id="gametwo">Juego 2</button>
+            <button class="tres" id="gamethree">Juego 3</button>
             <button class="cuatro" id="Tema"><i class="fas fa-palette fa-2x"></i>
                 <p>Cambiar Tema</p>
                 <p class="oculto" id="oscuro">Oscuro(default)</p>
                 <p class="oculto" id="claro">Claro</p>
             </button>
             <div class="coyo">
-                <img src="../statics/media/img/Escudo_enp_6 1.png">
-                <div>
-                    <h2 class="curso">CW<br> 2020</h2>
+                <div class="logop">
+                    <img src="../statics/media/img/Escudo_enp_6 1.png">
+                </div>
+                <div class="CWAC">
+                    <h2 class="curso">CW <br> 2020</h2>
                     <p class="enp">Prepa 6</p>
                     <p class="case">Antonio Caso</p>
                 </div>
             </div>
-        </div>
+        </aside>
         <div class="juego" id="contenedorJuego">
             <h4>Seleciona un juego</h4>
         </div>
     </div>
 
+    <script src="../Libs/jquery-3.5.1.min.js "></script>
     <script type="text/javascript" src="../Dynamics/js/principal.js"></script>
+    <script src="../Dynamics/js/blackjack.js"></script>
 </body>
 
 </html>

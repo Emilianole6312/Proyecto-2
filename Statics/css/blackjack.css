@@ -1,0 +1,92 @@
+@import url("fonts.css");
+body {
+    background-color: rgb(0, 147, 79);
+}
+
+#manosCrupier {
+    height: 20vh;
+}
+
+#jugar {
+    background-color: rgb(224, 26, 0);
+}
+
+#instrucciones {
+    background-color: rgb(230, 191, 0);
+}
+
+#best {
+    background-color: rgb(0, 62, 158);
+}
+
+div.inicio {
+  display: flex;
+  flex-direction: column;
+}
+
+div.inicio img {
+  margin: auto;
+  width: 30%;
+}
+
+button.button {
+  border-radius: 2rem;
+  color: white;
+  font-family: "Candal";
+  font-size: 150%;
+  margin: 10px auto;
+  outline: none;
+  padding: .5em 2.5rem;
+  width: auto;
+}
+
+.top, .middle, .bottom {
+  height: 32vh;
+  text-align: center;
+}
+
+.card {
+  height: 15vh;
+}
+
+.cartas {
+  margin: auto;
+  width: 50%;
+}
+
+.apuesta, .apostar {
+  background-color: rgb(224, 26, 0);
+  color: white;
+  font-size: 100%;
+}
+
+.apuesta {
+  padding: .5em .5em;
+  text-align: center;
+  width: 10%;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.empate {
+    background-color: springgreen;
+}
+
+.casa {
+    background-color: red;
+}
+
+.player {
+    background-color: blue;
+}
+
+.mensaje {
+  border-radius: 2em;
+  color: white;
+  font-size: 20px;
+  margin: auto;
+  padding: .5rem;
+  width: 60%;
+}

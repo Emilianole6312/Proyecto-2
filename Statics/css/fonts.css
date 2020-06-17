@@ -1,14 +1,12 @@
-@font-face{
-    font-family: "Candal";
-    src: url(../Media/fonts/Candal/Candal-Regular.ttf);
+@font-face {
+  font-family: "Candal";
+  src: url("../Media/fonts/Candal/Candal-Regular.ttf");
 }
-
-@font-face{
-    font-family: "Syncopate-bold";
-    src: url(../Media/fonts/Syncopate/Syncopate-Bold.ttf);
+@font-face {
+  font-size: "Sriracha";
+  src: url("../Media/fonts/Sriracha/Sriracha-Regular.ttf");
 }
-
-@font-face{
-    font-family: "Sriracha";
-    src: url(../Media/fonts/Sriracha/Sriracha-Regular.ttf);
+@font-face {
+  font-family: "Syncopate";
+  src: url("../Media/fonts/Syncopate/Syncopate-Bold.ttf");
 }

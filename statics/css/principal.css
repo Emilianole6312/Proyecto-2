@@ -6,7 +6,7 @@ body {
 .content {
     display: flex;
     flex-direction: row;
-    padding-top: 7%;
+    padding-top: 5%;
     background-color: #4A4B71;
 }
 
@@ -27,17 +27,33 @@ body {
     padding-left: 10%;
     padding-top: 2%;
 }
-.uno,.dos,.tres,.cuatro{
-  border-radius: 30%;
-  padding: 5%;
-  margin-top: 15%;
-  margin-right: 0.1%;
-  text-align: center;
+
+.uno,
+.dos,
+.tres,
+.cuatro {
+    border-radius: 30%;
+    padding: 5%;
+    margin-top: 15%;
+    margin-right: 0.1%;
+    text-align: center;
 }
-.uno {background-color: #C4619F;}
-.dos {background-color: #4169E1;}
-.tres {background-color: #02BF71;}
-.cuatro {background-color: #BF02AF;}
+
+.uno {
+    background-color: #C4619F;
+}
+
+.dos {
+    background-color: #4169E1;
+}
+
+.tres {
+    background-color: #02BF71;
+}
+
+.cuatro {
+    background-color: #BF02AF;
+}
 
 .uno:hover {
     background-color: #A83D80;
@@ -72,11 +88,17 @@ p.oculto:hover {
 }
 
 nav.navbar {
+    align-content: space-between;
+    display: flex;
+    flex-direction: row;
     color: azure;
     background-color: #4169E1;
     width: 100%;
     z-index: 10;
-    position: fixed;
+}
+
+nav.navbar img {
+    width: 20%;
 }
 
 div.coyo img {
@@ -111,4 +133,13 @@ p.case {
     border-radius: 10%;
     color: white;
     text-shadow: black 1px 2px;
+}
+
+@media screen and (max-width:500px) {
+    body {
+        background-color: red;
+    }
+    h1::after {
+        content: "Esta pantalla es muy pequeña";
+    }
 }

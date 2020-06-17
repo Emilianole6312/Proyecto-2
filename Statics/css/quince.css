@@ -1,0 +1,47 @@
+#hms {
+    height: 68px;
+    padding: 5px 0;
+    font-size: 50px;
+    color: #000;
+    font-family: alarm;
+}
+
+div.fila {
+    display: flex;
+    flex-direction: row;
+}
+
+div.columna {
+    display: flex;
+    flex-direction: column;
+}
+
+div.contenedor {
+    align-content: center;
+}
+
+div.botones {
+    padding-top: 2%;
+}
+
+.cell1,
+.cell2,
+.cell3,
+.cell4,
+.cell5,
+.cell6,
+.cell7,
+.cell8,
+.cell9,
+.cell10,
+.cell11,
+.cell12,
+.cell13,
+.cell14,
+.cell15,
+.cell16 {
+    background-color: aquamarine;
+    width: 5%;
+    border: 1px;
+    border-style: solid;
+}

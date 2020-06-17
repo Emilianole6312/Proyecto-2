@@ -89,3 +89,8 @@ button.button {
   padding: .5rem;
   width: 60%;
 }
+
+#apuesta{
+  border-radius: 2em;
+  outline: none;
+}

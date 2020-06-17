@@ -45,7 +45,7 @@ aside.lateral{
 
 button.uno, button.dos, button.tres, button.cuatro {
   border: none;
-  border-radius: 10%;
+  border-radius: 2em;
   cursor: pointer;
   margin: 15% 0% 0% 20%;
   outline: none;

@@ -21,26 +21,28 @@ boton.onclick = (function() { //Nota mental
   }
   $(".hijo").click(function(){
     let id =  $(this).attr("id"); //id del boton anterior
-    let idAnt = $("#" + (id - 1)).text();
-    let idDesp = $("#" + parseInt(parseInt(id) + 1)).text();
-    let idArr = $("#" + parseInt(id - 4)).text();
-    let idAba = $("#" + parseInt(parseInt(id) + 4)).text();
+    let idAnt = parseInt($("#" + (id - 1)).text());
+    let idDesp = parseInt($("#" + parseInt(parseInt(id) + 1)).text());
+    let idArr = parseInt($("#" + parseInt(id - 4)).text());
+    let idAba = parseInt($("#" + parseInt(parseInt(id) + 4)).text());
     let numerito = $("#" + id).text();
-    console.log(id + 1)
-    if (parseInt(idAnt) === 0) {
-      $("#" + id).text(0);
-      $("#" + (id - 1)).text(numerito);
+    if (idAnt === 0) {
+      if (id != 4 && id != 8 && id != 12){
+        $("#" + id).text(0);
+        $("#" + (id - 1)).text(numerito);
+      }
     }
-    // console.log(idDesp);
-    else if (parseInt(idDesp) === 0) {
-      $("#" + (id)).text(0);
-      $("#" + parseInt(parseInt(id) + 1)).text(numerito);
+    else if (idDesp === 0) {
+      if (id != 3 && id != 7 && id != 11){
+        $("#" + (id)).text(0);
+        $("#" + parseInt(parseInt(id) + 1)).text(numerito);
+      }
     }
-    else if (parseInt(idArr) === 0){
+    else if (idArr === 0){
       $("#" + (id)).text(0);
       $("#" + parseInt(parseInt(id) - 4)).text(numerito);
     }
-    else if (parseInt(idAba) === 0) {
+    else if (idAba === 0) {
       $("#" + (id)).text(0);
       $("#" + parseInt(parseInt(id) + 4)).text(numerito);
     }
@@ -49,7 +51,7 @@ boton.onclick = (function() { //Nota mental
       // console.log($("#" + fo).text());
       orden += $("#" + fo).text();
     }
-    if (orden === "123456789101112131415"){
+    if (orden === "1234567891011121314150"){
       console.log("YOU WIN");
     }
   });

@@ -14,3 +14,7 @@
   font-family: "Quicksand";
   src: url("../Media/fonts/Quicksand/Quicksand-Bold.ttf");
 }
+@font-face {
+  font-family: "Comfortaa";
+  src: url("../Media/fonts/Comfortaa/Comfortaa-Light.ttf");
+}

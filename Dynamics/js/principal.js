@@ -1,17 +1,70 @@
-let gameone = document.getElementById("gameone");
-let gametwo = document.getElementById("gametwo");
-let gamethree = document.getElementById("gamethree");
-let styleOne = document.getElementById("oscuro");
-let styleTwo = document.getElementById("claro");
-let contenedorJuego = document.getElementById("contenedorJuego");
-
 let navbar = document.getElementsByClassName("navbar");
 let lateral = document.getElementsByClassName("lateral");
 let content = document.getElementsByClassName("content");
+
 let uno = document.getElementsByClassName("uno");
 let dos = document.getElementsByClassName("dos");
 let tres = document.getElementsByClassName("tres");
 let cuatro = document.getElementsByClassName("cuatro");
+
+let gameone = document.getElementById("gameone");
+let gametwo = document.getElementById("gametwo");
+let gamethree = document.getElementById("gamethree");
+
+let sinopsis1 = document.getElementById("sinopsis1");
+let sinopsis2 = document.getElementById("sinopsis2");
+let sinopsis3 = document.getElementById("sinopsis3");
+
+let divJuego1 = document.getElementById("juego1");
+let divJuego2 = document.getElementById("juego2");
+let divJuego3 = document.getElementById("juego3");
+
+let styleOne = document.getElementById("oscuro");
+let styleTwo = document.getElementById("claro");
+let contenedorJuego = document.getElementById("contenedorJuego");
+
+let creditos = document.getElementById("boton_creditos");
+let divCred = document.getElementById("creditos");
+
+
+sinopsis1.onclick = function() {
+  fetch("../Templates/descripJ1.html")
+  .then((response => {
+      return response.text();
+  }))
+  .then((data) => {
+    divJuego1.innerHTML = data;
+  })
+  .catch((error) => {
+    console.error(error);
+  })
+};
+
+sinopsis2.onclick = function() {
+  fetch("../Templates/descripJ2.html")
+  .then((response => {
+      return response.text();
+  }))
+  .then((data) => {
+    divJuego2.innerHTML = data;
+  })
+  .catch((error) => {
+    console.error(error);
+  })
+};
+
+sinopsis3.onclick = function() {
+  fetch("../Templates/descripJ3.html")
+  .then((response => {
+      return response.text();
+  }))
+  .then((data) => {
+    divJuego3.innerHTML = data;
+  })
+  .catch((error) => {
+    console.error(error);
+  })
+};
 
 gameone.onclick = function() {
   fetch("../Templates/blackjack.html")
@@ -19,6 +72,9 @@ gameone.onclick = function() {
     return response.text();
   }))
   .then((data) => {
+    divJuego1.remove();
+    divJuego2.remove();
+    divJuego3.remove();
     contenedorJuego.innerHTML = data;
     $("#jugar").click(blackjackgame);
   })

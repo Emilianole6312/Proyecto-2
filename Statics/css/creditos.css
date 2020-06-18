@@ -1,0 +1,45 @@
+@import url("fonts.css");
+h1, h3, p, label {
+  font-family: "Comfortaa";
+}
+
+span {
+  color: white;
+}
+
+/* div.creditos {
+  position: absolute;
+  left: 30%;
+} */
+
+/* #boton_creditos {
+  background-color: #CA9C1D;
+  border: none;
+  border-radius: 10%;
+  cursor: pointer;
+  margin: 8% 0% 8% 20%;
+  width: 6%;
+} */
+
+div.modal-content {
+  background-color: #033F71;
+  color: white;
+}
+
+div.modal-header h1.modal-title {
+  padding-left: 30%;
+}
+
+div.modal-content img {
+  position: relative;
+  left: 25%;
+  width: 50%;
+}
+
+div.modal-content p {
+  text-align: center;
+}
+
+div.modal-footer button {
+  background-color: #F5811E;
+}

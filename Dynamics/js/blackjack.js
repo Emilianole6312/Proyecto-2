@@ -1,4 +1,3 @@
-//Bueno
 //Elementos de jquery
 //Gamezone
 let gamezone = $("<div>");
@@ -134,7 +133,7 @@ function jugar(dinero = 1000){
 
   $("body").keydown(function (event) {
     apuesta = parseInt($("#apuesta").val());
-    if(event.keyCode === 38) 
+    if(event.keyCode === 38)
         apuesta += (apuesta + 100 <= dinero) ? 100 : 0;
     else if(event.keyCode === 40)
         apuesta -= (apuesta - 100 >= 100) ? 100 : 0;

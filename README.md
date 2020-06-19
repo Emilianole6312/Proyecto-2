@@ -26,3 +26,4 @@
 ## Comentarios:
 1. Faltó un juego ya que se tuvo complicaciones al hacerlo.
 2. La parte de eleccion de imagen desde inicio no funciona. 😥
+3. No se ocupó el nombre index.html ya que no cargaba el javaScript ni los estilos CSS.

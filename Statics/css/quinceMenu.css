@@ -1,0 +1,49 @@
+#jugar {
+    background-color: #90C418;
+}
+
+#instrucciones {
+    background-color: #F8C822;
+}
+
+#puntajes {
+    background-color: #59ADFF;
+}
+
+div.contenedor {
+    background-color: #D1A3A5;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+header img {
+    width: 50%;
+}
+
+.titulo {
+    align-content: center;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+h1 {
+    text-align: center;
+    font-size: xx-large;
+    color: white;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-left: 45%;
+}
+
+section * {
+    background-color: #343434;
+    margin-top: 5%;
+    border: none;
+    border-radius: 35%;
+    width: 20%;
+}

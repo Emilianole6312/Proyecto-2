@@ -3,14 +3,14 @@
 ### Integrado por:
 - Rosales Olguín Ana Paula
 - Pérez Romero Natalia Abigail
-- María Fernanda Villafán Flores
+- Villafán Flores María Fernanda 
 - López Esquivel Emiliano
 
 ## Guía de instalación:
 1. Instalar Xampp.
 2. Descargar los archivos del proyecto Tony Case Arcade.
 
-## Configuraciones del proyecto: 
+## Configuraciones del proyecto:
 1. Cuando se instale Xampp se debe encender el servidor de apache.
 2. En el proyecto Tony Case Arcade, la página index.html (la página inicial) debe ser buscada en localHost.
 3. ¡Listo!, ya puedes ingresar a Tony Case Arcade.

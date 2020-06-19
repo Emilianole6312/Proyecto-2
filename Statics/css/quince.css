@@ -1,47 +1,31 @@
-#hms {
-    height: 68px;
-    padding: 5px 0;
-    font-size: 50px;
-    color: #000;
-    font-family: alarm;
+#padre {
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: repeat(4, 1fr);
+  left: 30%;
+  padding: 10px;
+  text-align: center;
+  width: 20%;
+}
+
+#jugar {
+  background-color: #90C418;
+  border: none;
+  border-radius: 2rem;
+  color: white;
+  cursor: pointer;
+  font-family: "Candal";
+  font-size: 150%;
+  margin: 10px auto;
+  outline: none;
+  padding: .5em 2.5rem;
+  width: auto;
 }
 
-div.fila {
-    display: flex;
-    flex-direction: row;
-}
-
-div.columna {
-    display: flex;
-    flex-direction: column;
-}
-
-div.contenedor {
-    align-content: center;
-}
-
-div.botones {
-    padding-top: 2%;
-}
-
-.cell1,
-.cell2,
-.cell3,
-.cell4,
-.cell5,
-.cell6,
-.cell7,
-.cell8,
-.cell9,
-.cell10,
-.cell11,
-.cell12,
-.cell13,
-.cell14,
-.cell15,
-.cell16 {
-    background-color: aquamarine;
-    width: 5%;
-    border: 1px;
-    border-style: solid;
+#padre button.hijo {
+  background-color: lightblue;
+  border: none;
+  border-radius: 5px;
+  margin: 4px;
+  padding: 10%;
 }

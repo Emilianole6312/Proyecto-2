@@ -1,3 +1,4 @@
+//Bueno
 //Elementos de jquery
 //Gamezone
 let gamezone = $("<div>");
@@ -96,85 +97,71 @@ manosCrupier.attr("id","manosCrupier")
 let continuar = $("<button>");
 continuar.attr("id", "continuar");
 continuar.text("Continuar");
-continuar.addClass("apostar")
+continuar.addClass("apostar");
+
+//Pantalla cuando pierdes
+let tuPuntaje = $("<h2>");
+tuPuntaje.text("Tu Puntaje fue:");
+let puntitos = $("<h3>");
+let loseDiv = $("<div>");
+loseDiv.attr("id","loseDiv");
+loseDiv.append(tuPuntaje,puntitos);
 
 let blackjackgame = () => {
   $("#inicio").remove();
-
-  //------Crear la pantalla para apostar------
-  //Crear top y su contenido
-  let manosCrupier = $("<img>");
-  manosCrupier.attr("src", "../Statics/media/img/crupier.png");
-  manosCrupier.attr("id", "manosCrupier");
   let top = $("<div>");
-  top.attr("class", "top");
-  top.append(manosCrupier);
-
-  // Generar el middle
-  let middle = $("<div>");
-  middle.attr("class", "middle");
-
-  // Genera el bottom y su contenido
-
-  // Cartas
-  let carta1 = $("<img>");
-  carta1.attr("src", "../Statics/Media/img/backcard.jpg");
-  carta1.attr("class", "card");
-  carta1.attr("id", "carta1Player");
-  let carta2 = $("<img>");
-  carta2.attr("src", "../Statics/Media/img/backcard.jpg");
-  carta2.attr("class", "card");
-  carta2.attr("id", "carta2Player");
-  let cartasDiv = $("<div>");
-  cartasDiv.attr("class", "cartas");
-  cartasDiv.prepend(carta1, carta2);
-
-  // Botones
-  let apuesta = $("<input>");
-  apuesta.attr("type", "number");
-  apuesta.attr("id", "apuesta");
-  apuesta.addClass("button apuesta");
-  apuesta.attr("step", "50");
-  apuesta.attr("value", "100");
-  apuesta.attr("min", "100");
-  apuesta.attr("name", "apuesta");
-  let apostar = $("<button>");
-  apostar.text("Apostar");
-  apostar.addClass("button apostar");
-  apostar.attr("id", "apostar");
-  let buttons = $("<div>");
-  buttons.attr("class","buttons");
-  buttons.prepend(apuesta, apostar);
-
-  let bottom = $("<div>");
-  bottom.prepend(cartasDiv, buttons);
-
+  top.attr("id", "top");
+  //------Crear la pantalla para apostar------
+  cartasDiv.prepend(carta0, carta1);
+  bottomTop.prepend(dineroDiv,cartasDiv,totalDiv);
+  bottom.prepend(bottomTop, bottomBottom);
   //Meto los tres niveles (top, middle, bottom) en gamezone
-  let gamezone = $("<div>");
-  gamezone.attr("class", "gamezone");
   gamezone.prepend(top, middle, bottom);
-  $("#contenedorJuego #blackjack_container").prepend(gamezone);
+  $("#blackjack_container").prepend(gamezone);
+  jugar();
+};
+
+function jugar(dinero = 1000){
+  //Se ponen las manos del crupier
+  $("#top").empty();
+  $("#top").append(manosCrupier);
+  $("#bottomBottom").append(apuestaInput,apostar);
+  $("#dinero").attr("value",dinero);
+  $("#puntos").attr("value", "?");
+  $("#carta0Player").attr("src", "../Statics/Media/img/backcard.jpg");
+  $("#carta1Player").attr("src", "../Statics/Media/img/backcard.jpg");
+  $("#apuesta").attr("value", "100");
+
+  $("body").keydown(function (event) {
+    apuesta = parseInt($("#apuesta").val());
+    if(event.keyCode === 38) 
+        apuesta += (apuesta + 100 <= dinero) ? 100 : 0;
+    else if(event.keyCode === 40)
+        apuesta -= (apuesta - 100 >= 100) ? 100 : 0;
+      $("#apuesta").val(apuesta);
+      document.body.keydown = stopEvent;
+  });
+
+  var puntaje = 0;
 
   //Evento del botón Apostar
   $("#apostar").click(() => {
-    var cartas = new Array();
-
     //-----FUNCIONES------
     //Sumar los punto acumulados
     function suma(jugador) {
       let suma = 0;
       let ases = 0;
       for (carta in jugador) {  //carta es el índice
-        suma += (jugador[carta].numero > 10) ? 10 : jugador[carta].numero;
+        suma += (parseInt(jugador[carta].numero) > 10) ? 10 : jugador[carta].numero;
         ases += (jugador[carta].numero === 1) ? 1 : 0;
       }
       for (let fo = 0; fo < ases; fo++) {
-        suma = (suma + 10 < 21) ? suma + 10 : suma;
+        suma = (parseInt(suma + 10) <= 21) ? suma + 10 : suma;
       }
       return suma;
     }
 
-    //Genarar Carta aleatoria
+    //Generar Carta aleatoria
     function cartaRandom() {
       numero = Math.round(Math.random() * 12) + 1;
       palo = Math.round(Math.random() * 3) + 1;
@@ -202,7 +189,7 @@ let blackjackgame = () => {
       }
     }
 
-    function nombreCarta (carta) {
+    function nombreCarta(carta) {
       let palo = "sin palo";
       palo = (carta.palo === 1) ? "picas" : palo;
       palo = (carta.palo === 2) ? "corazones" : palo;
@@ -211,9 +198,22 @@ let blackjackgame = () => {
       return palo + "-" + carta.numero + ".jpg";
     }
 
-    //------FUNCIONES------
+    function empate() {
+      dinero += parseInt(apuesta);
+    }
+
+    function gana() {
+      dinero += parseInt(apuesta * 2);
+      puntaje += apuesta;
+    }
+
+    let cartas = new Array();
+    let apuesta = $("#apuesta").val();
+    dinero -= apuesta;
+    $("#dinero").attr("value", parseInt(dinero));
     var crupier = new Array(generarCarta(), generarCarta());
     var player = new Array(generarCarta(), generarCarta());
+    $("#dinero").attr("value", dinero);
     $("#apostar").remove();
     $("#apuesta").remove();
 
@@ -234,12 +234,16 @@ let blackjackgame = () => {
     $("#pedir").click(() => {
       player.push(generarCarta());
       let cartaAdd = $("<img>");
-      cartaAdd.attr("src", "../Statics/Media/img/Baraja/" + nombreCarta(player[player.length - 1]));
+      cartaAdd.attr("src", "../Statics/Media/img/baraja/" + nombreCarta(player[player.length - 1]));
+      cartaAdd.attr("id","carta" + (player.length - 1 + "Player"))
       cartaAdd.addClass("card");
+      $("#puntos").attr("value", suma(player));
       $(".cartas").append(cartaAdd);
       let total = suma(crupier);
       if (total <= 16) {
         crupier.push(generarCarta());
+        cartaAddCrupier.attr("id", "carta" + (crupier.length - 1) + "Crupier");
+        $("#top").append(cartaAddCrupier);
       }
     });
 
@@ -249,16 +253,19 @@ let blackjackgame = () => {
       let total = suma(crupier);
       while (total <= 16) { //Se verifica que crupier tenga una suma de cartas mayor a 16
         crupier.push(generarCarta());
+        cartaAddCrupier.attr("id", "carta" + (crupier.length - 1) + "Crupier");
+        $("#top").append(cartaAddCrupier);
         total = suma(crupier);
       }
       let puntajeCrupier = suma(crupier);
       let puntajePlayer = suma(player);
       $("#pedir").remove();
       $("#plantarse").remove();
-      mensaje = $("<h1>");
+      let mensaje = $("<h1>");
       if (puntajePlayer > 21 && puntajeCrupier > 21) {
         mensaje.text("Te has pasado de 21, pero no todo esta perdido ya que el crupier también se ha pasado. Toma tu apuesta y se más cuidadoso la próxima vez");
         mensaje.addClass("empate");
+        empate();
       }
       else if (puntajePlayer > 21 || puntajeCrupier > 21) {
         if (puntajePlayer > 21) {
@@ -268,6 +275,7 @@ let blackjackgame = () => {
         else if (puntajeCrupier > 21) {
           mensaje.text("Que suerte has tenido!! El crupier se ha pasado de 21, toma tus ganancias pero no creas que siempre tendrás la misma suerte");
           mensaje.addClass("player");
+          gana();
         }
       }
       else if (puntajePlayer === puntajeCrupier) {
@@ -278,21 +286,27 @@ let blackjackgame = () => {
         else if (player.length < crupier.length) {
           mensaje.text("Has ganado, estas teniendo mucha suerte. No estarás haciendo trampa verdad?");
           mensaje.addClass("player");
+          gana();
         }
-        else{
+        else {
           mensaje.text("Has empatado, toma tu apuesta, sonríe ahora porque no podrás hacerlo después de que te deje en banca rota");
           mensaje.addClass("empate");
+          empate();
         }
       }
       else {
         if (puntajePlayer > puntajeCrupier) {
           mensaje.text("Has ganado. Vaya, has tenido mucha suerte... Que casualidad (si descubro que estas haciendo trampa te cortare un dedo y sera lo único que regresara con tu familia)");
           mensaje.addClass("player");
+          gana();
         }
         else if (puntajePlayer < puntajeCrupier) {
           mensaje.text("He ganado. Dame ese dinero, me encanta ganarle a los niñitos de mami como tú que no saben apostar");
           mensaje.addClass("casa");
         }
+      }
+      for(let cr = 1 ; cr < crupier.length ; cr++){
+        $("#carta" + cr + "Crupier").attr("src", "../Statics/Media/img/Baraja/" + nombreCarta(crupier[cr]))
       }
       mensaje.addClass("mensaje");
       $("#middle").append(mensaje);
@@ -309,7 +323,9 @@ let blackjackgame = () => {
           jugar(dinero);
         }
         else{
-
+          $("#blackjack_container").empty();
+          puntitos.text(puntaje);
+          $("#blackjack_container").append(loseDiv);
         }
         });
     });

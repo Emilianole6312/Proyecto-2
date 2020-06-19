@@ -218,6 +218,14 @@ div.juego {
   width: 100%;
 }
 
+#quince_container {
+  background-color:#D1A3A5;
+  border-radius: 2rem;
+  height: 100%;
+  top: 10%;
+  width: 100%;
+}
+
 @media screen and (max-width: 1000px) {
   body {
     background-color: #4A4B71;

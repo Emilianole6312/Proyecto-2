@@ -110,16 +110,22 @@ gameone.onclick = function() {
   })
 };
 
-
-// gametwo.onclick = function() {
-//     $(contenedorJuego).empty();
-//     contenedorJuego.appendChild(otro);
-// }
-//
-// gamethree.onclick = function() {
-//     $(contenedorJuego).empty();
-//     contenedorJuego.appendChild(otroDos);
-// }
+gamethree.onclick = function() {
+  fetch("../Templates/quince.html")
+  .then((response => {
+    return response.text();
+  }))
+  .then((data) => {
+    divJuego1.remove();
+    divJuego2.remove();
+    divJuego3.remove();
+    contenedorJuego.innerHTML = data;
+    $("#jugar").click(quinceGame);
+  })
+  .catch((error) => {
+    console.error(error);
+  })
+};
 
 claro.onclick = function() {
   $(navbar).css("background-color", "#389448");

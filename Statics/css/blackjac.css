@@ -1,12 +1,12 @@
 @import url(./fonts.css);
 
 body{
-    background-color: rgb(0, 147, 79);
+  background-color: rgb(0, 147, 79);
 }
 
 .inicio img{
-    width: 30%;
-    margin: auto;
+  width: 30%;
+  margin: auto;
 }
 
 .inicio{

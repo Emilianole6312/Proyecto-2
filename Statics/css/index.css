@@ -21,9 +21,9 @@ h1{
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 h2{
-  letter-spacing: 0.1pc;
-  font-family: 'Candal';
   color: white;
+  font-family: 'Candal';
+  letter-spacing: 0.1pc;
 }
 h3{
   font-family: 'Syncopate';
@@ -77,16 +77,16 @@ label {
   }
 }
 #inicio{
+  background-color: darkcyan;
+  height: 100px;
   position: absolute;
   top: 10%;
   width: 100%;
-  height: 100px;
-  background-color: darkcyan;
   z-index: 0;
 }
 #cuest{
-  display: flex;
   align-content: space-between;
+  display: flex;
 }
 
 /*atributoooosssss*/
@@ -96,20 +96,20 @@ img[alt="fondo"]{
 
 /*hijossssss*/
 h1:nth-child(2n){
+  color: lightgreen;
   position: relative;
   text-align: left;
-  color: lightgreen;
 }
 h1:nth-child(3n){
-  position: relative;
   color: lightgrey;
+  position: relative;
 }
 h1:last-child{
-  text-align: right;
   color: tomato;
+  text-align: right;
 }
 
 /*pseudoclaseeesss*/
 input:focus {
-    background-color: teal;
+  background-color: teal;
 }

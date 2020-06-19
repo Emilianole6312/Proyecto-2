@@ -136,3 +136,7 @@ button.button {
 #continuar{
   background-color: rgba(27, 97, 124, 0.726);
 }
+
+#loseDiv{
+  vertical-align: middle;
+}

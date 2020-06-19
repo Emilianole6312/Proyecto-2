@@ -97,7 +97,15 @@ manosCrupier.attr("id","manosCrupier")
 let continuar = $("<button>");
 continuar.attr("id", "continuar");
 continuar.text("Continuar");
-continuar.addClass("apostar")
+continuar.addClass("apostar");
+
+//Pantalla cuando pierdes
+let tuPuntaje = $("<h2>");
+tuPuntaje.text("Tu Puntaje fue:");
+let puntitos = $("<h3>");
+let loseDiv = $("<div>");
+loseDiv.attr("id","loseDiv");
+loseDiv.append(tuPuntaje,puntitos);
 
 let blackjackgame = () => {
   $("#inicio").remove();
@@ -126,16 +134,15 @@ function jugar(dinero = 1000){
 
   $("body").keydown(function (event) {
     apuesta = parseInt($("#apuesta").val());
-    switch (event.keyCode) {
-      case 38:
+    if(event.keyCode === 38) 
         apuesta += (apuesta + 100 <= dinero) ? 100 : 0;
-        break;
-      case 40:
+    else if(event.keyCode === 40)
         apuesta -= (apuesta - 100 >= 100) ? 100 : 0;
-        break;
-      }
       $("#apuesta").val(apuesta);
+      document.body.keydown = stopEvent;
   });
+
+  var puntaje = 0;
 
   //Evento del botón Apostar
   $("#apostar").click(() => {
@@ -149,7 +156,7 @@ function jugar(dinero = 1000){
         ases += (jugador[carta].numero === 1) ? 1 : 0;
       }
       for (let fo = 0; fo < ases; fo++) {
-        suma = (parseInt(suma + 10) < 21) ? suma + 10 : suma;
+        suma = (parseInt(suma + 10) <= 21) ? suma + 10 : suma;
       }
       return suma;
     }
@@ -197,6 +204,7 @@ function jugar(dinero = 1000){
 
     function gana() {
       dinero += parseInt(apuesta * 2);
+      puntaje += apuesta;
     }
 
     let cartas = new Array();
@@ -205,7 +213,6 @@ function jugar(dinero = 1000){
     $("#dinero").attr("value", parseInt(dinero));
     var crupier = new Array(generarCarta(), generarCarta());
     var player = new Array(generarCarta(), generarCarta());
-    console.log("Actualizar");
     $("#dinero").attr("value", dinero);
     $("#apostar").remove();
     $("#apuesta").remove();
@@ -316,7 +323,9 @@ function jugar(dinero = 1000){
           jugar(dinero);
         }
         else{
-
+          $("#blackjack_container").empty();
+          puntitos.text(puntaje);
+          $("#blackjack_container").append(loseDiv);
         }
         });
     });

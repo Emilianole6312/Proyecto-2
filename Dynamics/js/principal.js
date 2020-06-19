@@ -1,3 +1,4 @@
+//Declaracion de variables
 let navbar = document.getElementsByClassName("navbar");
 let lateral = document.getElementsByClassName("lateral");
 let content = document.getElementsByClassName("content");
@@ -23,6 +24,7 @@ let styleOne = document.getElementById("oscuro");
 let styleTwo = document.getElementById("claro");
 let contenedorJuego = document.getElementById("contenedorJuego");
 
+//función para mostrar los creditos
 $("#btn_creditos").click(function() {
   fetch("../Templates/creditos.html")
   .then((response => {
@@ -39,6 +41,7 @@ $("#btn_creditos").click(function() {
   })
 });
 
+//Función para mostrar el la sinopsis del juego 1
 sinopsis1.onclick = function() {
   fetch("../Templates/descripJ1.html")
   .then((response => {
@@ -52,6 +55,7 @@ sinopsis1.onclick = function() {
   })
 };
 
+//Función para mostrar el la sinopsis del juego 2
 sinopsis2.onclick = function() {
   fetch("../Templates/descripJ2.html")
   .then((response => {
@@ -65,6 +69,7 @@ sinopsis2.onclick = function() {
   })
 };
 
+//Función para mostrar el la sinopsis del juego 3
 sinopsis3.onclick = function() {
   fetch("../Templates/descripJ3.html")
   .then((response => {
@@ -78,6 +83,7 @@ sinopsis3.onclick = function() {
   })
 };
 
+//función para mostrar el blackjack
 gameone.onclick = function() {
   fetch("../Templates/blackjack.html")
   .then((response => {
@@ -110,6 +116,7 @@ gameone.onclick = function() {
   })
 };
 
+//Función para mostrar el juego de quince
 gamethree.onclick = function() {
   fetch("../Templates/quince.html")
   .then((response => {
@@ -127,6 +134,7 @@ gamethree.onclick = function() {
   })
 };
 
+//Función para cambiar al tema claro
 claro.onclick = function() {
   $(navbar).css("background-color", "#389448");
   $(lateral).css("background-color", "#D4CC62");
@@ -138,6 +146,7 @@ claro.onclick = function() {
   document.body.style.backgroundColor = "#D4CC62";
 }
 
+//Función ara cambiar al tema oscuro
 oscuro.onclick = function() {
   $(navbar).css("background-color", "#4169E1");
   $(lateral).css("background-color", "#4A4B71");

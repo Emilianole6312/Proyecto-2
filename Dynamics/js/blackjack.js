@@ -1,3 +1,4 @@
+//Bueno
 //Elementos de jquery
 //Gamezone
 let gamezone = $("<div>");
@@ -208,9 +209,9 @@ function jugar(dinero = 1000){
     $("#dinero").attr("value", dinero);
     $("#apostar").remove();
     $("#apuesta").remove();
-    
+
     $("#puntos").attr("value",suma(player));
-    
+
 
     $("#manosCrupier").remove();
     $("#top").prepend(carta0Crupier,carta1Crupier);
@@ -315,7 +316,7 @@ function jugar(dinero = 1000){
           jugar(dinero);
         }
         else{
-          
+
         }
         });
     });

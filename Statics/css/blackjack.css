@@ -1,7 +1,18 @@
 @import url("fonts.css");
+#bottomTop{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 
-#manosCrupier {
-  height: 20vh;
+#apuesta{
+  outline: none;
+  width: 10%;
+  background-color: rgb(184, 91, 79);
+}
+
+#buttons {
+  text-align: center;
 }
 
 #jugar {
@@ -14,6 +25,35 @@
 
 #best {
   background-color: rgb(0, 62, 158);
+}
+
+#top, #middle, #bottom {
+  height: 26vh;
+  text-align: center;
+}
+
+#manosCrupier {
+  height: 20vh;
+}
+
+#apostar{
+  background-color: rgb(224, 26, 0);
+}
+
+#pedir{
+  background-color: green;
+}
+
+#plantarse{
+  background-color: rgba(224, 26, 0, 0.664);
+}
+
+#continuar{
+  background-color: rgba(27, 97, 124, 0.726);
+}
+
+#loseDiv{
+  vertical-align: middle;
 }
 
 div.inicio {
@@ -39,34 +79,24 @@ button.button {
   width: auto;
 }
 
-.top, .middle, .bottom {
-  height: 26vh;
-  text-align: center;
+.cartas div{
+  width: 33%;
 }
 
 .card {
   height: 15vh;
 }
 
-.cartas {
-  margin: auto;
-  width: 50%;
-}
-
 .apuesta, .apostar {
-  background-color: rgb(224, 26, 0);
+  border: none;
+  border-radius: 2rem;
+  font-family: "Candal";
+  font-size: 17px;
   color: white;
-  font-size: 100%;
-}
-
-.apuesta {
   padding: .5em .5em;
+  margin: 1em;
   text-align: center;
-  width: 10%;
-}
-
-.buttons {
-  text-align: center;
+  outline: none;
 }
 
 .empate {
@@ -88,4 +118,24 @@ button.button {
   margin: auto;
   padding: .5rem;
   width: 60%;
+}
+
+.info{
+  border-radius: 2em;
+  border: none;
+  color: white;
+  font-family: "Quicksand";
+  font-size: 17px;
+  outline: none;
+  padding: 8px;
+  text-align: center;
+  width: 20%;
+}
+
+.puntos{
+  background: rgb(230, 191, 0);
+}
+
+.indicadores{
+  color: white;
 }

@@ -49,7 +49,7 @@ aside.lateral{
 
 button.uno, button.dos, button.tres, button.cuatro {
   border: none;
-  border-radius: 10%;
+  border-radius: 2em;
   cursor: pointer;
   margin: 8% 0% 8% 20%;
   outline: none;
@@ -217,10 +217,6 @@ div.juego {
   top: 10%;
   width: 100%;
 }
-
-/* #exampleModal {
-  display: none;
-} */
 
 @media screen and (max-width: 1000px) {
   body {

@@ -23,9 +23,21 @@ let styleOne = document.getElementById("oscuro");
 let styleTwo = document.getElementById("claro");
 let contenedorJuego = document.getElementById("contenedorJuego");
 
-let creditos = document.getElementById("boton_creditos");
-let divCred = document.getElementById("creditos");
-
+$("#btn_creditos").click(function() {
+  fetch("../Templates/creditos.html")
+  .then((response => {
+    return response.text();
+  }))
+  .then((data) => {
+    document.getElementById("creditos").innerHTML = data;
+    $("#btn_aceptar").click(function() {
+      $(".modal_creditos").css("display", "none");
+    });
+  })
+  .catch((error) => {
+    console.error(error);
+  })
+});
 
 sinopsis1.onclick = function() {
   fetch("../Templates/descripJ1.html")
@@ -77,11 +89,27 @@ gameone.onclick = function() {
     divJuego3.remove();
     contenedorJuego.innerHTML = data;
     $("#jugar").click(blackjackgame);
+    $("#instrucciones").click(function() {
+      fetch("../Templates/instrucciones1.html")
+      .then((response => {
+        return response.text();
+      }))
+      .then((data) => {
+        document.getElementById("instruc").innerHTML = data;
+        $("span").click(function() {
+          $(".modalInstruc1").css("display", "none");
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+    });
   })
   .catch((error) => {
     console.error(error);
   })
 };
+
 
 // gametwo.onclick = function() {
 //     $(contenedorJuego).empty();

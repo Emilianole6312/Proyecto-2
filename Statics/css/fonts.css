@@ -18,3 +18,7 @@
   font-family: "Comfortaa";
   src: url("../Media/fonts/Comfortaa/Comfortaa-Light.ttf");
 }
+@font-face {
+  font-family: "Nunito";
+  src: url("../Media/fonts/Nunito/Nunito-ExtraLight.ttf");
+}

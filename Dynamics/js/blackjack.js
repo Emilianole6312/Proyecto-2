@@ -1,3 +1,103 @@
+//Elementos de jquery
+//Gamezone
+let gamezone = $("<div>");
+gamezone.attr("class", "gamezone");
+
+//Middle
+let middle = $("<div>");
+middle.attr("id", "middle");
+
+//Crea el bottom
+let bottom = $("<div>");
+bottom.attr("id", "bottom");
+
+//BottomTop
+let bottomTop = $("<div>");
+bottomTop.attr("id", "bottomTop");
+
+//Cartas
+let carta0 = $("<img>");
+carta0.attr("class", "card");
+carta0.attr("id", "carta0Player");
+let carta1 = $("<img>");
+carta1.attr("class", "card");
+carta1.attr("id", "carta1Player");
+let carta0Crupier = $("<img>");
+carta0Crupier.attr("class", "card");
+carta0Crupier.attr("id", "carta0Crupier");
+let carta1Crupier = $("<img>");
+carta1Crupier.attr("class", "card");
+carta1Crupier.attr("id", "carta1Crupier");
+let cartaAddCrupier = $("<img>");
+cartaAddCrupier.addClass("card");
+cartaAddCrupier.attr("src","../Statics/media/img/backcard.jpg")
+
+//Div del dinero
+let dineroDiv = $("<div>");
+dineroDiv.attr("id","dineroDiv");
+let dineroH3 = $("<h3>");
+dineroH3.text("Tu dinero:");
+dineroH3.addClass("indicadores");
+let pasta = $("<input>");
+pasta.attr("type","text");
+pasta.attr("id","dinero");
+pasta.addClass("info player");
+pasta.attr("readonly","");
+dineroDiv.append(dineroH3,pasta);
+
+//Div del total
+let totalDiv = $("<div>");
+totalDiv.attr("id","totalDiv");
+let total = $("<h3>");
+total.text("Tus puntos: ");
+total.addClass("indicadores")
+let puntos = $("<input>");
+puntos.attr("id","puntos")
+puntos.attr("type","text");
+puntos.attr("readonly","");
+puntos.addClass("info puntos")
+totalDiv.append(total,puntos);
+
+//Div de las cartas
+let cartasDiv = $("<div>");
+cartasDiv.attr("class", "cartas");
+
+//Input para apostar
+let apuestaInput = $("<input readonly></input>");
+apuestaInput.attr("type", "number");
+apuestaInput.attr("id", "apuesta");
+apuestaInput.addClass("button apuesta");
+apuestaInput.attr("name", "apuesta");
+
+//Boton para apostar
+let apostar = $("<button>");
+apostar.text("Apostar");
+apostar.addClass("apostar");
+apostar.attr("id", "apostar");
+let bottomBottom = $("<div>");
+bottomBottom.attr("id", "bottomBottom");
+
+//Boton para plantarse
+let plantarse = $("<button>PLANTARSE</button>");
+plantarse.attr("id", "plantarse");
+plantarse.addClass("apostar");
+
+//Boton para pedir
+let pedir = $("<button>PEDIR</button>");
+pedir.attr("id", "pedir");
+pedir.addClass("apostar");
+
+//manos Cuprier
+manosCrupier = $("<img>");
+manosCrupier.attr("src", "../Statics/media/img/crupier.png");
+manosCrupier.attr("id","manosCrupier")
+
+//Boton para continuar
+let continuar = $("<button>");
+continuar.attr("id", "continuar");
+continuar.text("Continuar");
+continuar.addClass("apostar")
+
 let blackjackgame = () => {
   $("#inicio").remove();
 
@@ -116,18 +216,19 @@ let blackjackgame = () => {
     var player = new Array(generarCarta(), generarCarta());
     $("#apostar").remove();
     $("#apuesta").remove();
-    let plantarse = $("<button>PLANTARSE</button>");
-    plantarse.attr("id", "plantarse");
-    plantarse.addClass("button apostar");
-    let pedir = $("<button>PEDIR</button>");
-    pedir.attr("id", "pedir");
-    pedir.addClass("button apostar");
-    let carta1Player = nombreCarta(player[0]);
-    let carta2Player = nombreCarta(player[1]);
-    $("#carta1Player").attr("src", "../Statics/Media/img/Baraja/" + nombreCarta(player[0]));
-    $("#carta2Player").attr("src", "../Statics/Media/img/Baraja/" + nombreCarta(player[1]));
 
-    $(".buttons").append(plantarse, pedir);
+    $("#puntos").attr("value",suma(player));
+
+
+    $("#manosCrupier").remove();
+    $("#top").prepend(carta0Crupier,carta1Crupier);
+    $("#carta0Crupier").attr("src", "../Statics/Media/img/baraja/" + nombreCarta(crupier[0]));
+    $("#carta1Crupier").attr("src", "../Statics/Media/img/backcard.jpg");
+
+    $("top").append()
+    $("#carta0Player").attr("src", "../Statics/Media/img/Baraja/" + nombreCarta(player[0]));
+    $("#carta1Player").attr("src", "../Statics/Media/img/Baraja/" + nombreCarta(player[1]));
+    $("#bottomBottom").append(plantarse, pedir);
 
     //Pide cartas
     $("#pedir").click(() => {
@@ -194,7 +295,23 @@ let blackjackgame = () => {
         }
       }
       mensaje.addClass("mensaje");
-      $(".middle").append(mensaje);
+      $("#middle").append(mensaje);
+      $("#bottomBottom").append(continuar);
+      $("#dinero").val(dinero);
+      $("#continuar").click(() => {
+        if(dinero > 0){
+          $("#middle").empty();
+          $("#bottomBottom").empty();
+          for(let a = 2; a < player.length; a++){
+            let idCarta = "#carta" + a + "Player";
+            $(idCarta).remove();
+          }
+          jugar(dinero);
+        }
+        else{
+
+        }
+        });
     });
   });
-};
+}

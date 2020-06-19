@@ -1,0 +1,35 @@
+/* img {
+  margin: auto;
+  width: 30%;
+} */
+#padre {
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: repeat(4, 1fr);
+  left: 10%;
+  padding: 10px;
+  text-align: center;
+  /* width: 10%; */
+}
+
+#jugar {
+  background-color: #90C418;
+  border: none;
+  border-radius: 2rem;
+  color: white;
+  cursor: pointer;
+  font-family: "Candal";
+  font-size: 150%;
+  margin: 10px auto;
+  outline: none;
+  padding: .5em 2.5rem;
+  width: auto;
+}
+
+#padre button.hijo {
+  background-color: lightblue;
+  border: none;
+  border-radius: 5px;
+  margin: 4px;
+  padding: 10%;
+}

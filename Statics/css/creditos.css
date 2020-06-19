@@ -1,0 +1,55 @@
+@import url("fonts.css");
+h2, h3, p, label {
+  font-family: "Comfortaa";
+}
+
+hr {
+  width: 96%;
+}
+
+#btn_creditos {
+  background-color: #033F71;
+  border: none;
+  border-radius: 10px;
+  top: 6%;
+  color: white;
+  cursor: pointer;
+  left: 93%;
+  padding: 1%;
+  position: absolute;
+}
+
+#creditos {
+  background-color: #CA9C1D;
+  border: none;
+  border-radius: 10%;
+  cursor: pointer;
+  left: 37%;
+  position: fixed;
+  top: 25%;
+  width: 40%;
+}
+
+div.modal_cuerpo img {
+  position: relative;
+  width: 30%;
+}
+
+div.modal_cuerpo ul {
+  list-style: none;
+}
+div.modal-content p {
+  text-align: center;
+}
+
+div.modal_footer #btn_aceptar {
+  background-color: #F5811E;
+  border: none;
+  border-radius: 10%;
+  margin-bottom: 2%;
+  padding: 2%;
+}
+
+div.modal_footer label {
+  color: white;
+}

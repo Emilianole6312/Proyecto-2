@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Candal";
+  src: url("../Media/fonts/Candal/Candal-Regular.ttf");
+}
+@font-face {
+  font-size: "Sriracha";
+  src: url("../Media/fonts/Sriracha/Sriracha-Regular.ttf");
+}
+@font-face {
+  font-family: "Syncopate";
+  src: url("../Media/fonts/Syncopate/Syncopate-Bold.ttf");
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("../Media/fonts/Quicksand/Quicksand-Bold.ttf");
+}
+@font-face {
+  font-family: "Comfortaa";
+  src: url("../Media/fonts/Comfortaa/Comfortaa-Light.ttf");
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../Media/fonts/Nunito/Nunito-ExtraLight.ttf");
+}

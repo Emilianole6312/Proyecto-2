@@ -1,0 +1,35 @@
+@import url("fonts.css");
+div.modalInstruc1 {
+  background-color: rgb(230, 191, 0);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  left: 28%;
+  padding: 5%;
+  position: fixed;
+  top: 140px;
+  width: 50%;
+  z-index: 1;
+}
+
+span {
+  cursor: pointer;
+  left: 50%;
+  position: relative;
+}
+
+div.modalInstruc1 p, li {
+  font-family: "Nunito";
+}
+
+div.modalInstruc1 p:nth-child(3) {
+  text-align: justify;
+}
+
+div.modalInstruc1 p:nth-child(4) {
+  font-weight: 800;
+}
+
+div.modalInstruc1 ul {
+  text-align: left;
+}

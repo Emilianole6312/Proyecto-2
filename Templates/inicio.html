@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="spa">
+<head>
+    <title>Tony Case Arcade</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../Statics/css/inicio.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Statics/Media/favicon/arcade.png">
+</head>
+<section>
+    <header>
+      <div id="inicio"></div>
+      <h1>Tony</h1>
+      <h1>Case</h1>
+      <h1>Arcade</h1>
+    </header>
+    <nav>
+        <h2>¡Bienvenido a nuestro arcade!</h2>
+        <h3>Puedes comenzar a jugar cualquiera de los juegos de abajo después de ingresar un nombre de usuario</h3>
+    </nav>
+    <div class="slideContent">
+        <div class="slide">
+            <img src="../Statics/Media/img/screenBlackjack.jpg">
+        </div>
+        <div class="slide">
+            <img src="../Statics/Media/img/screenQuince.png">
+        </div>
+        <div class="slide">
+            <img src="../Statics/Media/img/screenSpaceI.png">
+        </div>
+        <div class="botones">
+            <a class="prev" onclick="plusSlides(-1)">&#9194;</a>
+            <a class="next" onclick="plusSlides(1)">&#9193;</a>
+        </div>
+    </div>
+
+    <form id='formulario'>
+        <div id="cuest">
+          <div class="cuestionario">
+            <label for="nombre">Nombre Jugador:</label><br>
+            <input type="text" id="nombre">
+          </div>
+          <div class="cuestionario">
+            <label for="img">Imagen de fondo:</label><br>
+            <div id="imagenes">
+              <img src="../Statics/Media/img/imagenesFondo/fondoCalido.jpg" alt="fondo"><br>
+              <input type="checkbox" id="1">
+              <img src="../Statics/Media/img/imagenesFondo/fondoMontanias.jpg" alt="fondo"><br>
+              <input type="checkbox" id="2">
+              <img src="../Statics/Media/img/imagenesFondo/fondoOscuro.jpg" alt="fondo"><br>
+              <input type="checkbox" id="3">
+            </div>
+          </div>
+          <div class="cuestionario">
+            <label for="tema">Tema:</label>
+            <select name="tema" id="tema">
+              <option value="oscuro">Oscuro</option>
+              <option value="claro">Claro</option>
+            </select>
+          </div>
+        </div>
+        <input class="button" type="submit" value='Jugar'>
+    </form>
+    <div id="error"></div>
+</section>
+<script src="../Dynamics/js/inicio.js"></script>
+
+</html>

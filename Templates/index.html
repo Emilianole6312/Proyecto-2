@@ -9,9 +9,10 @@
 </head>
 <section>
     <header>
-        <h1>Tony</h1>
-        <h1>Case</h1>
-        <h1>Arcade</h1>
+      <div id="inicio"></div>
+      <h1>Tony</h1>
+      <h1>Case</h1>
+      <h1>Arcade</h1>
     </header>
     <nav>
         <h2>¡Bienvenido a nuestro arcade!</h2>
@@ -21,11 +22,9 @@
         <div class="slide">
             <img src="../statics/media/img/blackjack.jpg">
         </div>
-
         <div class="slide">
             <img src="../statics/media/img/space.jpeg">
         </div>
-
         <div class="slide">
             <img src="../statics/media/img/quince.jpeg">
         </div>
@@ -35,11 +34,30 @@
         </div>
     </div>
 
-    <form action="" id='formulario'>
-        <div>
-            <label for="nombre">Nombre Jugador</label>
-            <br>
+    <form id='formulario'>
+        <div id="cuest">
+          <div class="cuestionario">
+            <label for="nombre">Nombre Jugador:</label><br>
             <input type="text" id="nombre">
+          </div>
+          <div class="cuestionario">
+            <label for="img">Imagen de fondo:</label><br>
+            <div id="imagenes">
+              <img src="../statics/media/img/imagenesFondo/fondoCalido.jpg" alt="fondo"><br>
+              <input type="checkbox" id="1">
+              <img src="../statics/media/img/imagenesFondo/fondoMontanias.jpg" alt="fondo"><br>
+              <input type="checkbox" id="2">
+              <img src="../statics/media/img/imagenesFondo/fondoOscuro.jpg" alt="fondo"><br>
+              <input type="checkbox" id="3">
+            </div>
+          </div>
+          <div class="cuestionario">
+            <label for="tema">Tema:</label>
+            <select name="tema" id="tema">
+              <option value="oscuro">Oscuro</option>
+              <option value="claro">Claro</option>
+            </select>
+          </div>
         </div>
         <input class="button" type="submit" value='Jugar'>
     </form>

@@ -11,7 +11,10 @@
 2. Descargar los archivos del proyecto Tony Case Arcade.
 
 ## Configuraciones del proyecto: 
-1. Cargar los csv de los usuarios _configuraciones sujetas a cambios_
+1. Cuando se instale Xampp se debe encender el servidor de apache.
+2. En el proyecto Tony Case Arcade, la página index.html (la página inicial) debe ser buscada en localHost.
+3. ¡Listo!, ya puedes ingresar a Tony Case Arcade.
+
 
 ## Características del proyecto:
 - La página Tony Case Arcade es un sitio en el que tú puedes elegir entre distintos juegos para pasar el rato.
@@ -22,3 +25,4 @@
 
 ## Comentarios:
 1. Faltó un juego ya que se tuvo complicaciones al hacerlo.
+2. La parte de eleccion de imagen desde inicio no funciona. 😥
